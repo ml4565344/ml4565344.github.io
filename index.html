@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
-<meta name="keywords" content="js大转盘抽奖, 微信游戏特效, css3动画, 网页特效" />
+<title>teezone</title>
+<meta name="keywords" content="操起你的粑粑手,本命年逆天改命" />
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="js/awardRotate.js"></script>
@@ -20,9 +20,10 @@ var turnplate={
 		bRotate:false				//false:停止;ture:旋转
 };
 
+var flag = 1
 $(document).ready(function(){
 	//动态添加大转盘的奖品与奖品区域背景颜色
-	turnplate.restaraunts = ["50M免费流量包", "10闪币", "谢谢参与", "5闪币", "10M免费流量包", "20M免费流量包", "20闪币 ", "30M免费流量包", "100M免费流量包", "2闪币"];
+	turnplate.restaraunts = ["1st", "精美奖品", "谢谢参与", "3rd", "谢谢参与", "谢谢参与", "4th", "谢谢参与", "谢谢参与"];
 	turnplate.colors = ["#FFF4D6", "#FFFFFF", "#FFF4D6", "#FFFFFF","#FFF4D6", "#FFFFFF", "#FFF4D6", "#FFFFFF","#FFF4D6", "#FFFFFF"];
 
 	
@@ -51,7 +52,16 @@ $(document).ready(function(){
 			animateTo:angles+1800,
 			duration:8000,
 			callback:function (){
-				alert(txt);
+				//alert("我擦，这也能中的吗！恭喜您获得【" + txt + "】一份!!");
+						
+						$('.red-tc').css('display','block');
+						$("p#p1").html(txt)
+  						$("button").click(function(){
+    						$('.red-tc').hide();
+							flag+=1
+							//alert(flag)
+  						});
+
 				turnplate.bRotate = !turnplate.bRotate;
 			}
 		});
@@ -62,7 +72,8 @@ $(document).ready(function(){
 		turnplate.bRotate = !turnplate.bRotate;
 		//获取随机数(奖品个数范围内)
 		//var item = rnd(1,turnplate.restaraunts.length);
-		var item = 324;
+		//alert(item)
+		var item = flag
 		//奖品数量等于10,指针落在对应奖品区域的中心角度[252, 216, 180, 144, 108, 72, 36, 360, 324, 288]
 		rotateFn(item, turnplate.restaraunts[item-1]);
 		/* switch (item) {
@@ -171,8 +182,8 @@ function drawRouletteWheel() {
 		  }
 		  
 		  //添加对应图标
-		  if(text.indexOf("闪币")>0){
-			  var img= document.getElementById("shan-img");
+		  if(text.indexOf("精美奖品")>=0){
+			  var img= document.getElementById("yangmeituqi");
 			  img.onload=function(){  
 				  ctx.drawImage(img,-15,10);      
 			  }; 
@@ -194,11 +205,11 @@ function drawRouletteWheel() {
 </script>
 </head>
 <body class="keBody">
-<h1 class="keTitle">HTML5+Canvas实现微信大转盘抽奖代码</h1>
+<h1 class="keTitle">点击屏幕中间的抽奖按钮！<br><font color="red">本命年</font>逆天改命！（不存在的^_^）</h1>
 <div class="kePublic">
 <!--效果html开始-->
     <div style="max-width:800px; margin:0 auto">
-    <img src="images/1.png" id="shan-img" style="display:none;" />
+    <img src="images/momo2.png" id="yangmeituqi" style="display:none;" />
     <img src="images/2.png" id="sorry-img" style="display:none;" />
 	<div class="banner">
 		<div class="turnplate" style="background-image:url(images/turnplate-bg.png);background-size:100% 100%;">
@@ -210,9 +221,27 @@ function drawRouletteWheel() {
 <!--效果html结束-->
 <div class="clear"></div>
 </div>
+<div class="red-tc">
+		<!-- 已中奖 -->
+	<div class="red-yzj">
+		<div class="red-tc-k">
+<!--				<p>￥<span>50.00</span>元</p>-->
+				<p>卧槽！恭喜你！</p>
+				你获得了</br>
+				<div class="imgcss" ><!--style="text-align:center"-->
+					<img src="./images/shifangyu.png" width="250"/>	<!--align="center"-->
+				</div>
+				<p id="p1" style="color:yellow"></p>
+		</div>
+		<div class="red-tc-btn" >
+				<button id="bt1">继续摇！</button>
+		</div>
+	</div>
+</div>
 <div class="keBottom">
 <div style="width: 100%; height: 50px; line-height: 50px; text-align: center; color: #fff;">
-	网页转自 <a href="http://www.internetke.com/" target="_blank">e科互联</a>更多网页特效，请访问<a href="http://www.5iweb.com.cn"><b>网页特效库</b></a>,欢迎加入网页特效库QQ交流群：258242983
+	中奖率低达10%，专治本命狗，这要是中了，我认作Ta爹！
+	<!--网页转自 <a href="http://www.internetke.com/" target="_blank">e科互联</a>更多网页特效，请访问<a href="http://www.5iweb.com.cn"><b>网页特效库</b></a>,欢迎加入网页特效库QQ交流群：258242983-->
 </div>
 </div>
 </body>

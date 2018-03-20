@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6{font-size:12px;font-weight:normal}
 body>div{margin:0 auto}
 div {text-align:left}
 a img {border:0}
-body {color: #333; text-align: center; font: 12px "微软雅黑"; overflow-x:hidden; }
+body { color: #333; text-align: center; font: 12px "微软雅黑"; overflow-x:hidden; }
 ul, ol, li {list-style-type:none;vertical-align:0}
 a {outline-style:none;color:#535353;text-decoration:none}
 a:hover { color: #D40000; text-decoration: none}
@@ -18,17 +18,31 @@ a:hover { color: #D40000; text-decoration: none}
 .red:active {color: #de898c;background: -webkit-gradient(linear, left top, left bottom, from(#aa1317), to(#ed1c24));background: -moz-linear-gradient(top,  #aa1317,  #ed1c24);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');}
 .cor_bs,.cor_bs:hover{color:#ffffff;}
 .keBody{background:url(../images/bodyBg.jpg) repeat #333;}
-.keTitle{height:100px; line-height:100px; overflow:hidden; font-size:30px; font-family:'微软雅黑'; color:#FFF; text-align:center; background:url(../images/bodyBg3.jpg) repeat-x bottom left; font-weight:normal}
-.kePublic{ background:url(../images/jinyuanbao.jpg);background-size:100px 100px; padding:50px;}
+.keTitle{height:100px; line-height:50px; overflow:hidden; font-size:20px; font-family:'微软雅黑'; color:#FFF; text-align:center; background:url(../images/bodyBg3.jpg) repeat-x bottom left; font-weight:normal}
+.kePublic{background:url(../images/guilian.jpg);background-size:40px,40px; padding:50px;}
 .keBottom{color:#FFF; padding-top:25px; line-height:28px; text-align:center; font-family:'微软雅黑'; background:url(../images/bodyBg2.jpg) repeat-x top left; padding-bottom:25px}
 .keTxtP{font-size:16px; color:#ffffff;}
 .keUrl{color:#FFF; font-size:30px;}
 .keUrl:hover{ text-decoration: underline; color: #FFF; }
 .mKeBanner,.mKeBanner div{text-align:center;}
-/*科e互联特效基本框架CSS结束，应用特效时，以上样式可删除*/
+
 
 /* 大转盘样式 */
 .banner{display:block;width:95%;margin-left:auto;margin-right:auto;margin-bottom: 20px;}
 .banner .turnplate{display:block;width:100%;position:relative;}
 .banner .turnplate canvas.item{width:100%;}
 .banner .turnplate img.pointer{position:absolute;width:31.5%;height:42.5%;left:34.6%;top:23%;}
+
+/*中奖弹出窗口*/
+.red-tc{background: rgba(0,0,0,0.85); position: absolute; width: calc( 100% - 80px ); padding: 0px 40px; height: 100%; top: 0; display: none;}
+.red-yzj>.red-tc-k,.red-tc-btn{width: calc( 100% - 40px ); padding: 20px; background-repeat: no-repeat;}
+.red-yzj>.red-tc-k{background: url(../images/red-zj-bg.png); background-size: 100%;  margin-top: 40%; text-align: center; font-size: 16px;}
+.red-yzj>.red-tc-k>img{width: 50%; display: block; margin: 0 auto; padding-bottom: 10px;}
+.red-yzj>.red-tc-k>p{font-size: 20px; padding-bottom: 10px;}
+.red-yzj>.red-tc-k>p>span{font-size: 34px; padding: 0px 5px;}
+.red-yzj>.red-tc-btn{ background: url(../images/red-btn-bg.png); background-size: 100%;}
+.red-yzj>.red-tc-btn>button{width: 100%; background: #ff0006; border-radius: 5px; border: none; line-height: 40px; font-size: 18px; color: #fff;}
+
+/*奖品图片*/
+.imgcss{padding:12px; width: calc( 100% + 20px ); height: calc( 100% - 30px ); border-radius:15px;}
+.imgcss>img{width: calc( 100% - 40px  );height: calc( 100% - 30px ); padding-bottom:5px; border-radius:15px}
